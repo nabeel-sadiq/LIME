@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}🍋 LIME{% endblock title %}
+
+{% block styles %}
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    align-items: center;
+    min-height: 100svh;
+    min-height: 100dvh;
+    min-height: 100vh;
+  }
+  
+  a {
+    padding-block: 15px;
+    padding-inline: 19px;
+    font-size: 20px;
+    background-color: limegreen;
+    border-radius: 3px;
+    color: black;
+  }
+
+  a:hover {
+    background-color: indigo;
+    color: white;
+  }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<div class="container">
+  <h1>🍋 LIME</h1>
+  <a href="/limes/create">Create a Lime</a>
+  <a href="/limes">View Limes</a>
+</div>
+{% endblock content %}

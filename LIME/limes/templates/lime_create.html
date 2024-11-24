@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}🚀 Create Lime{% endblock title %}
+
+{% block styles %}
+<style>
+    /* General Page Styling */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-top: 20px;
+    }
+
+    /* Styling the Form */
+    form {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    form input[type="text"],
+    form textarea,
+    form button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+    form input[type="text"],
+    form textarea {
+        font-size: 14px;
+    }
+
+    form button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    form button:hover {
+        background-color: #45a049;
+    }
+
+    /* Back Link Styling */
+    a {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #007BFF;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    div {
+      text-align: center;
+    }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<h1>Create a Lime</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Post Lime</button>
+</form>
+<div><a href="/limes">View All Limes</a></div>
+{% endblock content %}

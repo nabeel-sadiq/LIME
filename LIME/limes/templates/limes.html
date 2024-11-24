@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+🤩 See Limes
+{% endblock title %}
+
+
+{% block styles %}
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    align-items: center;
+    min-height: 100svh;
+    min-height: 100dvh;
+    min-height: 100vh;
+  }
+
+  .lime {
+    padding-inline: 10px;
+    padding-block: 10px;
+    font-size: 20px;
+    border: 1px dotted black;
+    width: 100%;
+    text-align: center;
+  }
+
+</style>
+{% endblock styles %}
+
+
+{% block content %}
+<div class="container">
+{% for lime in limes %}
+  <div class="lime">
+    <p>{{lime.content}}</p>
+  </div>
+  {% endfor %}
+  <a href="/limes/create">Create a Lime</a>
+</div>
+{% endblock content %}
